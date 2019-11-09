@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Select() {
+export default function Select(props) {
     return (
         <div className="form-group">
             <label for={props.name}>{props.title}</label>
@@ -12,7 +12,7 @@ export default function Select() {
                 onChange={props.handleChange}
             >
                 <option value="" disabled>{props.placeholder}</option>
-                
+
                 {props.options.map(option => {
                     return(
                         <option 

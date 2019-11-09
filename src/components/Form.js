@@ -6,6 +6,10 @@ import Select from './Select';
 import TextField from './TextField';
 import Button from './Button';
 
+const buttonStyle = {
+    margin : '10px 10px 10px 10px'
+}
+
 export class Form extends Component {
     constructor(props){
         super(props);
@@ -154,8 +158,18 @@ export class Form extends Component {
                     placeholder = {'Describe your past experience and skills'} 
                     handleChange = {this.handleTextField}
                 />
-                <Button />
-                <Button />
+                <Button
+                    title = {'Submit'}
+                    type = {'primary'}
+                    action = {this.handleFormSubmit} 
+                    style = {buttonStyle}
+                />
+                <Button
+                    title = {'Clear'}
+                    type = {'secondary'}
+                    action = {this.handleClearForm} 
+                    style = {buttonStyle}
+                />
             </form>
         )
     }
