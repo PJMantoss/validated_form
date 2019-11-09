@@ -20,12 +20,56 @@ export class Form extends Component {
             genderOptions: ['Male', 'Female', 'Others'],
             skillOptions: ['Programming', 'Development', 'Design', 'Testing']
         }
+
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleClearForm = this.handleClearForm.bind(this);
+        this.handleFullName = this.handleFullName.bind(this);
+        this.handleAge = this.handleAge.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
+
+    handleFullName(e){
+        let value = e.target.value;
+        this.setState(prevState => ({
+            newUser: {
+            ...prevState.newUser, name: value
+        }}), () => console.log(this.state.newUser))
+    }
+
+    handleAge(e){
+        let value = e.target.value;
+        this.setState(prevState => ({
+            newUser: {
+            ...prevState.newUser, age: value
+        }}), () => console.log(this.state.newUser))
+    }
+
+    handleInput(e){
+        let value = e.target.value;
+        let name = e.target.name;
+        this.setState(prevState => ({
+            newUser: {
+            ...prevState.newUser, [name]: value
+        }}), () => console.log(this.state.newUser))
+    }
+
+    handleTextField(e){
+        console.log("Inside handleTextField");
+        let value = e.target.value;
+        this.setState(prevState => ({
+            newUser: {
+            ...prevState.newUser, about: value
+        }}), () => console.log(this.state.newUser))
+    }
+
+    handleFormSubmit(e){}
+
+    handleClearForm(e){}
 
 
     render() {
         return (
-            <form>
+            <form className="container" onSubmit={this.handleFormSubmit}>
                 <Input />
                 <Input />
                 <Select />
