@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Button(props) {
+    console.log(props.style);
     return (
         <button 
             style={props.style} 

@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="col-md-6">
       <h3>Validated Form Sample</h3>
       <Form />
     </div>

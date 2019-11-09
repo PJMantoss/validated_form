@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function TextField() {
+export default function TextField(props) {
     return (
         <div className="form-group">
-            <label></label>
+            <label>{props.title}</label>
             <textarea 
                 className="form-control" 
                 name={props.name} 
@@ -11,7 +11,7 @@ export default function TextField() {
                 cols={props.cols} 
                 value={props.value} 
                 onChange={props.handleChange} 
-                placeholder={props.handleChange} 
+                placeholder={props.placeholder} 
             />
         </div>
     )

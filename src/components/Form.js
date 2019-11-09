@@ -6,9 +6,6 @@ import Select from './Select';
 import TextField from './TextField';
 import Button from './Button';
 
-const buttonStyle = {
-    margin : '10px 10px 10px 10px'
-}
 
 export class Form extends Component {
     constructor(props){
@@ -31,6 +28,7 @@ export class Form extends Component {
         this.handleAge = this.handleAge.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleTextField = this.handleTextField.bind(this);
+        this.handleCheckBox = this.handleCheckBox.bind(this); 
     }
 
     handleFullName(e){
@@ -154,6 +152,7 @@ export class Form extends Component {
                     title = {'About you'} 
                     name = {'currentInfo'}
                     rows = {10} 
+                    cols={50}
                     value = {this.state.newUser.about} 
                     placeholder = {'Describe your past experience and skills'} 
                     handleChange = {this.handleTextField}
@@ -173,6 +172,10 @@ export class Form extends Component {
             </form>
         )
     }
+}
+
+const buttonStyle = {
+    margin : '10px 10px 10px 10px'
 }
 
 export default Form
