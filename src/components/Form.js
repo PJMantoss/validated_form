@@ -146,7 +146,14 @@ export class Form extends Component {
                     selectedOptions = {this.state.newUser.skills}  
                     handleChange = {this.handleCheckBox} 
                 />
-                <TextField />
+                <TextField
+                    title = {'About you'} 
+                    name = {'currentInfo'}
+                    rows = {10} 
+                    value = {this.state.newUser.about} 
+                    placeholder = {'Describe your past experience and skills'} 
+                    handleChange = {this.handleTextField}
+                />
                 <Button />
                 <Button />
             </form>
