@@ -115,10 +115,37 @@ export class Form extends Component {
     render() {
         return (
             <form className="container" onSubmit={this.handleFormSubmit}>
-                <Input />
-                <Input />
-                <Select />
-                <CheckBox />
+                <Input 
+                    inputType = {'text'} 
+                    title = {'Full Name'} 
+                    name = {'name'} 
+                    value = {this.state.newUser.name} 
+                    placeholder = {'Type your name'} 
+                    handleChange = {this.handleInput} 
+                />
+                <Input
+                    inputType = {'number'} 
+                    title = {'Age'} 
+                    name = {'age'} 
+                    value = {this.state.newUser.age} 
+                    placeholder = {'Enter your age'} 
+                    handleChange = {this.handleAge} 
+                />
+                <Select 
+                    title = {'Gender'} 
+                    name = {'gender'}
+                    options = {this.state.genderOptions} 
+                    value = {this.state.newUser.gender} 
+                    placeholder = {'Select your gender'} 
+                    handleChange = {this.handleInput} 
+                />
+                <CheckBox
+                    title = {'Skills'} 
+                    name = {'skills'}
+                    options = {this.state.skillOptions} 
+                    selectedOptions = {this.state.newUser.skills}  
+                    handleChange = {this.handleCheckBox} 
+                />
                 <TextField />
                 <Button />
                 <Button />
