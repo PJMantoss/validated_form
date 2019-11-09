@@ -26,6 +26,7 @@ export class Form extends Component {
         this.handleFullName = this.handleFullName.bind(this);
         this.handleAge = this.handleAge.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleTextField = this.handleTextField.bind(this);
     }
 
     handleFullName(e){
@@ -62,7 +63,26 @@ export class Form extends Component {
         }}), () => console.log(this.state.newUser))
     }
 
-    handleFormSubmit(e){}
+    handleCheckBox(e){
+        const newSelection = e.target.value;
+        let newSelectionArray;
+
+        if(this.state.newUser.skills.indexOf(newSelection) > -1){
+            newSelectionArray = this.state.newUser.skills.filter(s => s !== newSelection)
+        }else{
+            newSelectionArray = [...this.state.newUser.skills, newSelection];
+        }
+
+        this.setState(prevState => ({
+            newUser: {
+                ...prevState.newUser, skills: newSelectionArray
+            }
+        }))
+    }
+
+    handleFormSubmit(e){
+        e.preventDefault();
+    }
 
     handleClearForm(e){}
 
